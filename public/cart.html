@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+    </header>
+    <body>
+        <div id="app">
+            <div id="nav">
+                <p id="logo">ASHBYco</p>
+                <form class="example" action="/action_page.php" style="margin:auto;max-width:900px">
+                    <input type="text" placeholder="NOT YET IMPLEMENTED" name="search2">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <div id="links">
+                    <a href="index.html">Home</a> |
+                    <a href="about.html">About</a> |
+                    <a href="cart.html" style="color:#2196F3">Cart [{{cart.length}}]</a> |
+                    <a href="admin.html">Admin</a>
+                    <p v-if="user">Welcome {{user.username}}<a href="#" @click="logout" style="float:right;">Logout</a></p>
+                    <p v-else><a href="#" @click="toggleForm" style="float:right;">Register or Login</a></p>
+                </div>
+            </div>
+            <h1>Cart</h1>
+            <div v-if="cart.size === 0">Your cart is empty</div>
+            <div v-else>
+                <p v-for="item in cart">
+                    {{item.name}} - price {{item.price}} <img v-bind:src="item.url" width=200 height=100 align="middle">
+                    <input type="button" @click.prevent="removeCart(item)" v-bind:for="item" value="Remove from Cart">
+                </p>
+            </div>
+            <div id="footer">
+              <p>what the heck, my footer</p>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+        <script src="/cart.js"></script>
+    </body>
+</html>

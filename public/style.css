@@ -1,0 +1,383 @@
+.content {
+    max-width: 85%;
+    margin: auto;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.content p {
+    margin: 0;
+    padding: 20px;
+}
+
+#logo {
+  color: white;
+  float: left;
+  padding-left: 20px;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#admin {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#admin p {
+    margin: 0;
+    margin-top: 15px; 
+}
+
+#admin .form {
+    text-align: left;
+    margin-left: 250px;
+    background-color: white;
+    width: 30%;
+    padding: 10px;
+    float: left;
+}
+
+#admin .currentProd {
+    margin-right: 250px;
+    background-color: white;
+    width: 25%;
+    float: right;
+    padding: 10px;
+}
+
+#nav {
+  padding: 7px;
+  padding-bottom: 20px;
+  background-color: rgb(2, 5, 31);
+}
+
+#nav a {
+  font-weight: bold;
+  color: gray;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#nav a:hover {
+  color: rgb(179, 179, 179);
+}
+
+#nav a.router-link-exact-active {
+  color: #2196F3;
+}
+
+#footer {
+  background-color: rgb(2, 5, 31);
+  color: white;
+  position: absolute;
+  top:100%;
+  width: 100%;
+}
+
+#search {
+  width: 60%;
+  height: 30px;
+}
+
+#links {
+  padding-top: 16px;
+  display: inline-block;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+  background-color: rgb(217, 217, 217);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form {
+  padding: 2px!important;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 88%;
+  height: 35px;
+  background: #f1f1f1;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+form.example input:focus {
+  border-color: #2196F3;
+  outline: none;
+}
+
+form.example button {
+  float: left;
+  width: 6%;
+  height: 35px;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 15px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  line-height: 30%;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+
+.popularItems {
+    position: absolute;
+    top: 50%;
+    background-color: white;
+    left: 9%;
+    height: 450px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.popularItems h1 {
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0;
+}
+.popularItems img {
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    padding-top: 5px;
+}
+.popularItems p {
+    padding-top: 5px;
+    font-size: 12px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+.popularItems #fullList {
+    font-size: 13px;
+    text-align: left;
+    margin-left: 20px;
+    color: rgb();
+    text-decoration: none;
+}
+.popularItems #fullList:hover {
+    text-decoration: underline;
+    color: #2196F3;
+}
+
+.comingSoon {
+    position: absolute;
+    top: 50%;
+    background-color: white;
+    left: 34%;
+    height: 450px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.comingSoon h1 {
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0;
+}
+
+.comingSoon img {
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+}
+
+.comingSoon p {
+    padding-top: 5px;
+}
+
+.dealOfTheDay {
+    position: absolute;
+    top: 50%;
+    background-color: white;
+    right: 9%;
+    height: 450px;
+    width: 400px;
+}
+
+.dealOfTheDay h1 {
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0;
+    height:50px;
+}
+
+.dealOfTheDay img {
+    object-fit: cover;
+    width: 350px;
+    height: 250px;
+}
+
+.dealOfTheDay p {
+    padding-top: 5px;
+}
+
+.w3-content {
+    max-width: 100%!important;
+    height: 600px!important;
+}
+
+.w3-display-left {
+    top: 30%!important;   
+}
+
+.w3-display-right {
+    top: 30%!important;   
+}
+
+/*modal*/
+/* Login Form */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+.modal-mask2 {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 100);
+  display: table;
+  transition: opacity .3s ease;
+}
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+.modal-container {
+  width: 500px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.modal-header h1 {
+  margin-bottom: 30px;
+  font-size: 1.5em;
+}
+.modal-body {
+  margin: 0;
+}
+.modal-body input {
+  margin-bottom: 20px;
+  height: 30px;
+}
+.modal-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-default-button {
+  float: right;
+}
+
+/*
+  * The following styles are auto-applied to elements with
+  * transition="modal" when their visibility is toggled
+  * by Vue.js.
+  *
+  * You can easily play with the modal transition by editing
+  * these styles.
+  */
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* General */
+.error {
+  color: #B2261C;
+}
+
+input, textarea, select, button {
+  font-family: 'Arimo', sans-serif;
+  font-size: 1em;
+}
+
+button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 32px;
+}
+
+button {
+  background-color: #EE9828;
+  color: white;
+}
+
+button:hover {
+  background-color: #C47D21;
+  color: white;
+}
+
+button.other {
+  background-color: #5271B2;
+  color: white;
+}
+
+button.other:hover {
+  background-color: #4261A2;
+  color: white;
+}
+
+button.close {
+  background-color: #aaa;
+  color: white;
+}
+
+button.close:hover {
+  background-color: #888;
+  color: white;
+}

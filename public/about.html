@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+    </header>
+    <body>
+        <div id="app">
+            <div id="nav">
+                <p id="logo">ASHBYco</p>
+                <form class="example" action="/action_page.php" style="margin:auto;max-width:900px">
+                    <input type="text" placeholder="NOT YET IMPLEMENTED" name="search2">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <div id="links">
+                    <a href="index.html">Home</a> |
+                    <a href="about.html" style="color:#2196F3">About</a> |
+                    <a href="cart.html">Cart [{{cart.length}}]</a> |
+                    <a href="admin.html">Admin</a>
+                    <p v-if="user">Welcome {{user.username}}<a href="#" @click="logout" style="float:right;">Logout</a></p>
+                    <p v-else><a href="#" @click="toggleForm" style="float:right;">Register or Login</a></p>
+                </div>
+            </div>
+            <div id="aboutContent">
+                <h1>About this Site</h1>
+                <h3>Features that have been implemented</h2>
+                <center><ul style="list-style-type:square;"></center>
+                    <li>MongoDB</li>
+                    <li>Vue</li>
+                    <li>Authentication</li>
+                    <li>Admin Specific Access for adding/editing items</li>
+                </ul>
+                <h3>Features that will someday be implemented</h2>
+                <center><ul style="list-style-type:square;"></center>
+                    <li>Cross links between Item pages</li>
+                    <li>An extra DB feature allowing each user to have a specific Cart</li>
+                </ul>
+            </div>
+            <div id="footer">
+              <p>what the heck, my footer</p>
+            </div>
+            <transition v-if="showForm" name="modal">
+              <div class="modal-mask">
+                <div class="modal-wrapper">
+                  <div class="modal-container">
+        
+                    <div class="modal-header">
+                      <h1 class="modal-title">Register or Login</h1>
+                    </div>
+                    <div class="modal-body">
+                      <p v-if="error" class="error">{{error}}</p>
+                      <label>Username</label>
+                      <br>
+                      <input v-model="username">
+                      <br>
+                      <label>Password</label>
+                      <br>
+                      <input type="password" v-model="password">
+                    </div>
+                    <div class="modal-footer">
+                      <button @click="register" type="button">Register</button>
+                      <button @click="login" type="button" class="other">Login</button>
+                      <button @click="toggleForm" type="button" class="close">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </transition>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+        <script src="/about.js"></script>
+    </body>
+</html>
