@@ -20,7 +20,7 @@
                 <a href="about.html">About</a> |
                 <a href="cart.html">Cart [{{cart.length}}]</a> |
                 <a href="/" style="color:#2196F3">Admin</a>
-                <p v-if="user">Welcome {{user.username}}<a href="#" @click="logout" style="float:right;">Logout</a></p>
+                <p v-if="user" style="color:white">Welcome {{user.username}}<a href="#" @click="logout" style="float:right;">Logout</a></p>
                 <p v-else><a href="#" @click="toggleForm" style="float:right;">Register or Login</a></p>
               </div>
             </div>
@@ -29,8 +29,8 @@
                     <h1>Store Management Interface</h1>
                     <p>Product Name <input v-model="name" placeholder="Name"></p>
                     <p>Price <input v-model="price" placeholder="Price"></p>
-                    <p>Webpage Path <input v-model="path" placeholder="Path"></p>
-                    <p>Picture URL <input v-model="Url" placeholder="URL"><button @click="addProduct">Add Product</button></p>
+                    <p>Webpage Path <input v-model="path" placeholder="NOT YET IMPLEMENTED"></p>
+                    <p>Picture URL <input v-model="Url" placeholder="URL" style="margin-right: 70px;"><button @click="addProduct">Add Product</button></p>
                 </div>
                 <div class="currentProd">
                     <u><h2>Current Products</h1></u>
@@ -38,9 +38,6 @@
                         <span class="glyphicon glyphicon-remove" v-on:click="removeItem(item)"></span> {{item.name}} - price {{item.price}} - ordered {{item.ordered}} <img v-bind:src="item.url" width=200 height=100>
                     </p>
                 </div>
-            </div>
-            <div id="footer">
-              <p>what the heck, my footer</p>
             </div>
             <transition v-if="showForm" name="modal">
               <div class="modal-mask">
@@ -69,7 +66,7 @@
                 </div>
               </div>
             </transition>
-            <transition v-if="notAdmin" name="modal2">
+            <transition v-if="user.username != admin1" name="modal2">
                 <div class="modal-mask2">
                     <div class="modal-wrapper">
                       <div class="modal-container">

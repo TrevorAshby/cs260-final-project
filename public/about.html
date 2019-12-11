@@ -19,7 +19,7 @@
                     <a href="about.html" style="color:#2196F3">About</a> |
                     <a href="cart.html">Cart [{{cart.length}}]</a> |
                     <a href="admin.html">Admin</a>
-                    <p v-if="user">Welcome {{user.username}}<a href="#" @click="logout" style="float:right;">Logout</a></p>
+                    <p v-if="user" style="color:white">Welcome {{user.username}}<a href="#" @click="logout" style="float:right;">Logout</a></p>
                     <p v-else><a href="#" @click="toggleForm" style="float:right;">Register or Login</a></p>
                 </div>
             </div>
@@ -37,9 +37,6 @@
                     <li>Cross links between Item pages</li>
                     <li>An extra DB feature allowing each user to have a specific Cart</li>
                 </ul>
-            </div>
-            <div id="footer">
-              <p>what the heck, my footer</p>
             </div>
             <transition v-if="showForm" name="modal">
               <div class="modal-mask">
@@ -68,6 +65,15 @@
                 </div>
               </div>
             </transition>
+            <!--<div class="content">
+                <div class="popularItems2">
+                    <h1>Popular Items</h1>
+                    <p v-for="item in items.slice(0,4)">
+                        <a href=""><img v-bind:src="item.url" width=100% height=100% align="middle"></a>{{item.name}}
+                    </p>
+                    <a id="fullList" href="popularitems.html" style="color:red">See Full List</a>
+                </div>
+            </div>-->
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>

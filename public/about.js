@@ -7,10 +7,12 @@ var app = new Vue({
         password: '',
         error: '',
         cart: [],
+        items: [],
     },
     created() {
         this.getUser();
         this.getCart();
+        this.getItems();
     },
     watch: {
       cart: function() {
@@ -70,6 +72,15 @@ var app = new Vue({
             this.user = response.data;
           } catch (error) {
             // Not logged in. That's OK!
+          }
+        },
+        async getItems() {
+          try {
+            let response = await axios.get("/api/item");
+            this.items = response.data;
+            return true;
+          } catch (error) {
+            console.log(error);
           }
         },
         async getCart() {

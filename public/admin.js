@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#admin',
     data: {
-        notAdmin: false, //<---SET TO TRUE
+        notAdmin: true, //<---SET TO TRUE
         showForm: false,
         user: null,
         username: '',
@@ -14,7 +14,8 @@ var app = new Vue({
         addItem: null,
         items: [],
         cart: [],
-        admins: ["5dedbb8ed5e5ff0f3a9a94b3"]
+        admin1: "mashbygirl",
+        admin2: "TrevTheCreator"
     },
     created() {
         this.getUser();
@@ -24,18 +25,9 @@ var app = new Vue({
     watch: {
       cart: function() {
         this.getCart();
-      }
+      },
     },
     methods: {
-        isAdmin() {
-            if (this.user.admin == "true"){
-                this.notAdmin = false;
-                return true;
-            }
-            else {
-                return false;
-            }
-        },
         closeForm() {
           this.showForm = false;
         },

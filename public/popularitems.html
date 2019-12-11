@@ -19,18 +19,17 @@
                     <a href="about.html">About</a> |
                     <a href="cart.html">Cart [{{cart.length}}]</a> |
                     <a href="admin.html">Admin</a>
-                    <p v-if="user">Welcome {{user.username}}<a href="#" @click="logout" style="float:right;">Logout</a></p>
+                    <p v-if="user" style="color:white">Welcome {{user.username}}<a href="#" @click="logout" style="float:right;">Logout</a></p>
                     <p v-else><a href="#" @click="toggleForm" style="float:right;">Register or Login</a></p>
                 </div>
             </div>
             <h1>Popular Products</h1>
-            <p v-for="item in items">
-                {{item.name}} - price {{item.price}} <img v-bind:src="item.url" width=200 height=100 align="middle">
-                <input type="button" @click.prevent="addToCart(item); updateOrdered(item);" v-bind:for="item" value="Add to Cart">
-            </p>
-            <!--<div id="footer">
-              <p>what the heck, my footer</p>
-            </div>-->
+            <div class="popProd">
+              <p v-for="item in items" class="product">
+                  {{item.name}} <br> - price {{item.price}} <br><img v-bind:src="item.url" width=200 height=100 align="middle">
+                  <br><input type="button" @click.prevent="addToCart(item); updateOrdered(item);" v-bind:for="item" value="Add to Cart">
+              </p>
+            </div>
             <transition v-if="showForm" name="modal">
               <div class="modal-mask">
                 <div class="modal-wrapper">

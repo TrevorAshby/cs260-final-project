@@ -32,7 +32,7 @@ const CartItem = mongoose.model('CartItem', itemSchema);
 // Get a list of all of the items in the museum.
 app.get('/api/item', async (req, res) => {
   try {
-    let items = await Item.find().sort({name:1});
+    let items = await Item.find().sort({ordered:-1});
     res.send(items);
   } catch (error) {
     console.log(error);

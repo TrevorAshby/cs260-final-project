@@ -49,9 +49,11 @@
 #admin .currentProd {
     margin-right: 250px;
     background-color: white;
-    width: 25%;
+    width: 30%;
+    max-height: 815px;
     float: right;
     padding: 10px;
+    overflow: scroll;
 }
 
 #nav {
@@ -178,10 +180,49 @@ form.example button:hover {
     font-size: 13px;
     text-align: left;
     margin-left: 20px;
-    color: rgb();
+    color: red;
     text-decoration: none;
 }
 .popularItems #fullList:hover {
+    text-decoration: underline;
+    color: #2196F3;
+}
+.popularItems2 {
+    position: absolute;
+    top: 13%;
+    background-color: white;
+    left: 4%;
+    height: 800px;
+    width: 200px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+.popularItems2 h1 {
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0;
+}
+.popularItems2 img {
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    padding-top: 5px;
+}
+.popularItems2 p {
+    padding-top: 5px;
+    font-size: 12px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+.popularItems2 #fullList {
+    font-size: 13px;
+    text-align: left;
+    margin-left: 20px;
+    color: rgb();
+    text-decoration: none;
+}
+.popularItems2 #fullList:hover {
     text-decoration: underline;
     color: #2196F3;
 }
@@ -252,6 +293,18 @@ form.example button:hover {
 
 .w3-display-right {
     top: 30%!important;   
+}
+
+.popProd {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 9%;
+}
+
+.product {
+  background-color: white;
+  width: 400px;
+  padding: 10px;
 }
 
 /*modal*/
