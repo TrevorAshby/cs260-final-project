@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/6e7ba133c6.js" crossorigin="anonymous"></script>
         <meta charset="utf-8">
     </header>
     <body>
@@ -11,6 +12,7 @@
             <div id="nav">
                 <p id="logo">ASHBYco</p>
                 <form class="example" action="/action_page.php" style="margin:auto;max-width:900px">
+                    <a href="https://github.com/TrevorAshby/cs260-final-project" class="fab fa-github-square" id="github"></a>
                     <input type="text" placeholder="NOT YET IMPLEMENTED" name="search2">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
@@ -37,7 +39,7 @@
                     <p v-for="item in items.slice(0,4)">
                         <a href=""><img v-bind:src="item.url" width=100% height=100% align="middle"></a>{{item.name}}
                     </p>
-                    <a id="fullList" href="popularitems.html" style="color:red;">See Full List</a>
+                    <a id="aboutlink" href="popularitems.html">See Full List</a>
                 </div>
             </div>
         </div>

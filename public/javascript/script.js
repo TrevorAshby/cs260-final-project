@@ -122,15 +122,26 @@ var app = new Vue({
             console.log(error);
         }
     },
+    async addToCart(addCartItem) {
+        try {
+          await axios.post("/api/cart/" + addCartItem._id);
+          console.log("Item added to Cart");
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    async updateOrdered(addCartItem) {
+      try {
+        await axios.put("/api/item", addCartItem);
+      } catch (error) {
+        console.log(error);
+      }
+    },
     
     
     
-    
-    
-    
-    
-    
-    async searchItems() {
+    /* NOT FINISHED YET
+      async searchItems() {
       let response = await axios.get("/api/item", this.itemToSearch);
       this.searchResult = response.data;
       try {
@@ -138,7 +149,7 @@ var app = new Vue({
       } catch(error) {
         console.log(error);
       }
-    }
+    }*/
   }
 });
 

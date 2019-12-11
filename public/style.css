@@ -10,10 +10,34 @@
     padding: 20px;
 }
 
+#theList {
+  margin-left: 50px;
+  text-align: left;
+}
+
+#aboutlink {
+  color: red;
+}
+#aboutlink:hover {
+  color: rgb(65, 123, 207);
+}
+
 #logo {
   color: white;
   float: left;
   padding-left: 20px;
+}
+
+#github {
+  color: gray;
+  float: left;
+  font-size: 36px;
+  margin-right: 2px;
+}
+
+#github:hover {
+  color: #2196F3;
+  pointer: hand;
 }
 
 #app {
@@ -76,14 +100,6 @@
 
 #nav a.router-link-exact-active {
   color: #2196F3;
-}
-
-#footer {
-  background-color: rgb(2, 5, 31);
-  color: white;
-  position: absolute;
-  top:100%;
-  width: 100%;
 }
 
 #search {
@@ -234,12 +250,10 @@ form.example button:hover {
     left: 34%;
     height: 450px;
     width: 600px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
 }
 
 .comingSoon h1 {
-    margin-left: 15px;
+    text-align: center!important;
     font-weight: bold;
     font-size: 24px;
     margin: 0;

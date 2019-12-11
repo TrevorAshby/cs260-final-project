@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/6e7ba133c6.js" crossorigin="anonymous"></script>
         <meta charset="utf-8">
     </header>
     <body>
@@ -11,6 +12,7 @@
             <div id="nav">
               <p id="logo">ASHBYco</p>
               <form class="example" action="/action_page.php" style="margin:auto;max-width:900px">
+                <a href="https://github.com/TrevorAshby/cs260-final-project" class="fab fa-github-square" id="github"></a>
                 <input type="text" placeholder="NOT YET IMPLEMENTED" name="search2">
                 <button type="submit"><i class="fa fa-search"></i></button>
               </form>
@@ -40,16 +42,22 @@
                     <a id="fullList" href="popularitems.html">See Full List</a>
                 </div>
                 <div class="comingSoon">
-                    <p v-for="item in items">
-                        <!--<input type="checkbox" v-bind:id="item" v-bind:value="item" v-model="checkedItems">
-                        <label v-bind:for="item">{{item.name}} - price {{item.price}} <img v-bind:src="item.url" width=200 height=100 align="middle"></label>
-                    --></p>
+                  <h1>Coming Soon!</h1>
+                  <h5>What are some features you can look forward to seeing!?</h5>
+                  <ul id="theList">
+                    <li><p>Personalized Shopping Carts Per User<i class="fas fa-user-friends" style="font-size:40px;margin-left:10px;"></i><i class="fas fa-shopping-cart" style="font-size:40px;"></i></p></li>
+                    <li><p>Greater Depth And Customization For User Profiles<i class="fas fa-cogs" style="font-size:40px;margin-left:10px;"></i></p></li>
+                    <li><p>Individual "Item" Page For Each Product<i class="fas fa-sitemap" style="font-size:40px;margin-left:10px;"></i></p></li>
+                    <li><p>Ratings And Reviews Per Product<i class="fas fa-star-half-alt"style="font-size:40px;margin-left:10px;"></i></p></li>
+                  </ul>
+                  <p style="text-align:left;margin-top:60px;">To find out more, go to the <a href="about.html" id="aboutlink">About</a> Page!</p>
                 </div>
                 <div class="dealOfTheDay">
                     <h1>Deal of the Day</h1>
-                    <img v-bind:src="items[2].url"align="middle" style="margin-left:5px;">
-                    <p>{{items[2].name}}</p>
-                    <p style="text-decoration:line-through;color:red;">${{items[2].price}}</p>
+                    <img v-bind:src="items[9].url" align="middle" style="margin-left:5px;">
+                    <p style="padding:0;">{{items[9].name}}</p>
+                    <p style="text-decoration:line-through;padding:0;">${{items[9].price}}</p><p style="color:red;font-style:italic;">-20% off</p>
+                    <input type="button" @click.prevent="addToCart(items[9]); updateOrdered(items[9]);" v-bind:for="item" value="Add to Cart" style="margin:0;">
                 </div>
             </div>
             <transition v-if="showForm" name="modal">
