@@ -14,8 +14,8 @@ var app = new Vue({
         addItem: null,
         items: [],
         cart: [],
-        admin1: "mashbygirl",
-        admin2: "TrevTheCreator"
+        admin2: "mashbygirl",
+        admin1: "TrevTheCreator"
     },
     created() {
         this.getUser();
